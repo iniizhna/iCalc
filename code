@@ -1,0 +1,384 @@
+classdef iCalc < matlab.apps.AppBase
+
+    % Properties that correspond to app components
+    properties (Access = public)
+        UIFigure       matlab.ui.Figure
+        Image          matlab.ui.control.Image
+        percent        matlab.ui.control.Button
+        squarethree_2  matlab.ui.control.Button
+        squarethree    matlab.ui.control.Button
+        squaretwo      matlab.ui.control.Button
+        EditField      matlab.ui.control.EditField
+        Label          matlab.ui.control.Label
+        eight          matlab.ui.control.Button
+        minus          matlab.ui.control.Button
+        equal          matlab.ui.control.Button
+        four           matlab.ui.control.Button
+        seven          matlab.ui.control.Button
+        plus           matlab.ui.control.Button
+        divide         matlab.ui.control.Button
+        three          matlab.ui.control.Button
+        six            matlab.ui.control.Button
+        zero           matlab.ui.control.Button
+        multiply       matlab.ui.control.Button
+        two            matlab.ui.control.Button
+        five           matlab.ui.control.Button
+        nine           matlab.ui.control.Button
+        clear          matlab.ui.control.Button
+        one            matlab.ui.control.Button
+    end
+
+    % Callbacks that handle component events
+    methods (Access = private)
+
+        % Button pushed function: one
+        function onePushed(app, event)
+            Existingstring = app.EditField.Value;
+            newstring = ('1')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: two
+        function twoPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('2')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: three
+        function threePushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('3')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: four
+        function fourPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('4')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: five
+        function fivePushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('5')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: six
+        function sixPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('6')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: seven
+        function sevenPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('7')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: eight
+        function eightPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('8')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: nine
+        function ninePushed(app, event)
+                  Existingstring = app.EditField.Value;
+            newstring = ('9')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring; 
+        end
+
+        % Button pushed function: zero
+        function zeroPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('0')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: plus
+        function plusPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('+')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: minus
+        function minusPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('-')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: multiply
+        function multiplyPushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('*')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: divide
+        function dividePushed(app, event)
+                   Existingstring = app.EditField.Value;
+            newstring = ('/')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: clear
+        function clearButtonPushed(app, event)
+           app.EditField.Value = ('');
+        end
+
+        % Button pushed function: equal
+        function equalButtonPushed(app, event)
+            Existingstring = app.EditField.Value;
+           result = eval(Existingstring);
+            app.EditField.Value = num2str(result);
+        end
+
+        % Button pushed function: squaretwo
+        function squaretwoButtonPushed(app, event)
+             Existingstring = app.EditField.Value;
+            newstring = ('^2')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: squarethree
+        function squarethreeButtonPushed(app, event)
+              Existingstring = app.EditField.Value;
+            newstring = ('^3')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: squarethree_2
+        function squarethree_2ButtonPushed(app, event)
+               Existingstring = app.EditField.Value;
+            newstring = ('^')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+
+        % Button pushed function: percent
+        function percentButtonPushed(app, event)
+             Existingstring = app.EditField.Value;
+            newstring = ('/100')
+            textstring = strcat(Existingstring,newstring);
+            app.EditField.Value = textstring;
+        end
+    end
+
+    % Component initialization
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Get the file path for locating images
+            pathToMLAPP = fileparts(mfilename('fullpath'));
+
+            % Create UIFigure and hide until all components are created
+            app.UIFigure = uifigure('Visible', 'off');
+            app.UIFigure.Color = [1 1 1];
+            app.UIFigure.Position = [100 100 371 315];
+            app.UIFigure.Name = 'MATLAB App';
+
+            % Create one
+            app.one = uibutton(app.UIFigure, 'push');
+            app.one.ButtonPushedFcn = createCallbackFcn(app, @onePushed, true);
+            app.one.FontWeight = 'bold';
+            app.one.Position = [93 234 39 25];
+            app.one.Text = '1';
+
+            % Create clear
+            app.clear = uibutton(app.UIFigure, 'push');
+            app.clear.ButtonPushedFcn = createCallbackFcn(app, @clearButtonPushed, true);
+            app.clear.BackgroundColor = [0.651 0.651 0.651];
+            app.clear.Position = [255 107 41 25];
+            app.clear.Text = 'clear';
+
+            % Create nine
+            app.nine = uibutton(app.UIFigure, 'push');
+            app.nine.ButtonPushedFcn = createCallbackFcn(app, @ninePushed, true);
+            app.nine.FontWeight = 'bold';
+            app.nine.Position = [91 145 39 25];
+            app.nine.Text = '9';
+
+            % Create five
+            app.five = uibutton(app.UIFigure, 'push');
+            app.five.ButtonPushedFcn = createCallbackFcn(app, @fivePushed, true);
+            app.five.FontWeight = 'bold';
+            app.five.Position = [91 190 39 25];
+            app.five.Text = '5';
+
+            % Create two
+            app.two = uibutton(app.UIFigure, 'push');
+            app.two.ButtonPushedFcn = createCallbackFcn(app, @twoPushed, true);
+            app.two.FontWeight = 'bold';
+            app.two.Position = [145 234 39 25];
+            app.two.Text = '2';
+
+            % Create multiply
+            app.multiply = uibutton(app.UIFigure, 'push');
+            app.multiply.ButtonPushedFcn = createCallbackFcn(app, @multiplyPushed, true);
+            app.multiply.Position = [145 107 39 25];
+            app.multiply.Text = 'x';
+
+            % Create zero
+            app.zero = uibutton(app.UIFigure, 'push');
+            app.zero.ButtonPushedFcn = createCallbackFcn(app, @zeroPushed, true);
+            app.zero.FontWeight = 'bold';
+            app.zero.Position = [145 145 39 25];
+            app.zero.Text = '0';
+
+            % Create six
+            app.six = uibutton(app.UIFigure, 'push');
+            app.six.ButtonPushedFcn = createCallbackFcn(app, @sixPushed, true);
+            app.six.FontWeight = 'bold';
+            app.six.Position = [145 190 39 25];
+            app.six.Text = '6';
+
+            % Create three
+            app.three = uibutton(app.UIFigure, 'push');
+            app.three.ButtonPushedFcn = createCallbackFcn(app, @threePushed, true);
+            app.three.FontWeight = 'bold';
+            app.three.Position = [200 234 39 25];
+            app.three.Text = '3';
+
+            % Create divide
+            app.divide = uibutton(app.UIFigure, 'push');
+            app.divide.ButtonPushedFcn = createCallbackFcn(app, @dividePushed, true);
+            app.divide.Position = [200 107 39 25];
+            app.divide.Text = '/';
+
+            % Create plus
+            app.plus = uibutton(app.UIFigure, 'push');
+            app.plus.ButtonPushedFcn = createCallbackFcn(app, @plusPushed, true);
+            app.plus.Position = [200 145 39 25];
+            app.plus.Text = '+';
+
+            % Create seven
+            app.seven = uibutton(app.UIFigure, 'push');
+            app.seven.ButtonPushedFcn = createCallbackFcn(app, @sevenPushed, true);
+            app.seven.FontWeight = 'bold';
+            app.seven.Position = [200 190 39 25];
+            app.seven.Text = '7';
+
+            % Create four
+            app.four = uibutton(app.UIFigure, 'push');
+            app.four.ButtonPushedFcn = createCallbackFcn(app, @fourPushed, true);
+            app.four.FontWeight = 'bold';
+            app.four.Position = [255 234 39 25];
+            app.four.Text = '4';
+
+            % Create equal
+            app.equal = uibutton(app.UIFigure, 'push');
+            app.equal.ButtonPushedFcn = createCallbackFcn(app, @equalButtonPushed, true);
+            app.equal.BackgroundColor = [0.3922 0.8314 0.0745];
+            app.equal.FontSize = 18;
+            app.equal.FontWeight = 'bold';
+            app.equal.Position = [255 68 39 30];
+            app.equal.Text = '=';
+
+            % Create minus
+            app.minus = uibutton(app.UIFigure, 'push');
+            app.minus.ButtonPushedFcn = createCallbackFcn(app, @minusPushed, true);
+            app.minus.Position = [255 145 39 25];
+            app.minus.Text = '-';
+
+            % Create eight
+            app.eight = uibutton(app.UIFigure, 'push');
+            app.eight.ButtonPushedFcn = createCallbackFcn(app, @eightPushed, true);
+            app.eight.FontWeight = 'bold';
+            app.eight.Position = [255 190 39 25];
+            app.eight.Text = '8';
+
+            % Create Label
+            app.Label = uilabel(app.UIFigure);
+            app.Label.HorizontalAlignment = 'right';
+            app.Label.Position = [53 274 25 22];
+            app.Label.Text = '';
+
+            % Create EditField
+            app.EditField = uieditfield(app.UIFigure, 'text');
+            app.EditField.Position = [93 274 201 22];
+
+            % Create squaretwo
+            app.squaretwo = uibutton(app.UIFigure, 'push');
+            app.squaretwo.ButtonPushedFcn = createCallbackFcn(app, @squaretwoButtonPushed, true);
+            app.squaretwo.Position = [145 68 39 25];
+            app.squaretwo.Text = '^2';
+
+            % Create squarethree
+            app.squarethree = uibutton(app.UIFigure, 'push');
+            app.squarethree.ButtonPushedFcn = createCallbackFcn(app, @squarethreeButtonPushed, true);
+            app.squarethree.Position = [200 68 39 25];
+            app.squarethree.Text = '^3';
+
+            % Create squarethree_2
+            app.squarethree_2 = uibutton(app.UIFigure, 'push');
+            app.squarethree_2.ButtonPushedFcn = createCallbackFcn(app, @squarethree_2ButtonPushed, true);
+            app.squarethree_2.Position = [91 68 37 25];
+            app.squarethree_2.Text = '^';
+
+            % Create percent
+            app.percent = uibutton(app.UIFigure, 'push');
+            app.percent.ButtonPushedFcn = createCallbackFcn(app, @percentButtonPushed, true);
+            app.percent.Position = [91 107 39 25];
+            app.percent.Text = '%';
+
+            % Create Image
+            app.Image = uiimage(app.UIFigure);
+            app.Image.Position = [296 1 67 59];
+            app.Image.ImageSource = fullfile(pathToMLAPP, 'IniCalc.png');
+
+            % Show the figure after all components are created
+            app.UIFigure.Visible = 'on';
+        end
+    end
+
+    % App creation and deletion
+    methods (Access = public)
+
+        % Construct app
+        function app = iCalc
+
+            % Create UIFigure and components
+            createComponents(app)
+
+            % Register the app with App Designer
+            registerApp(app, app.UIFigure)
+
+            if nargout == 0
+                clear app
+            end
+        end
+
+        % Code that executes before app deletion
+        function delete(app)
+
+            % Delete UIFigure when app is deleted
+            delete(app.UIFigure)
+        end
+    end
+end
